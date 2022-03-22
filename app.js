@@ -2,10 +2,8 @@ const express = require ('express');
 const app = express();
 const mangoose = require('mongoose');
 const bodyparser = require('body-parser')
-
+const port = process.env.port ||5000 
 app.use(bodyparser.json())
-
-
 
 
 const postsRoute = require('./routes/countries');
@@ -19,8 +17,6 @@ app.get('/',(req, res) => {
 
 
 
-
-
 mangoose.connect('mongodb+srv://oussama:0000@affectum.j1l4f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
 {useNewUrlParser: true,
     useUnifiedTopology: true},
@@ -28,4 +24,4 @@ mangoose.connect('mongodb+srv://oussama:0000@affectum.j1l4f.mongodb.net/myFirstD
 .then(() => console.log("Database connected!"))
  .catch(err => console.log(err));
 
-app.listen(3000);
+app.listen(port);
