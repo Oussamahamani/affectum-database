@@ -24,4 +24,4 @@ mangoose.connect('mongodb+srv://oussama:0000@affectum.j1l4f.mongodb.net/myFirstD
 .then(() => console.log("Database connected!"))
  .catch(err => console.log(err));
 
-app.listen(process.env.port ||5000);
+app.listen(process.env.PORT ||5000);
